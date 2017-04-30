@@ -15,7 +15,7 @@ namespace VPNAndDevicesManager
         {
             try
             {
-                string sqlCmd_Get = string.Format("SELECT COUNT(*) FROM [VPNInfo] WHERE [VPNAccount] = '{0}'", vpnInfo.VPNAccount);
+                string sqlCmd_Get = string.Format("SELECT COUNT(*) FROM [VPNInfo] WHERE [VPNAccount] = '{0}' AND [IP] = '{1}'", vpnInfo.VPNAccount, vpnInfo.IP);
                 object count = SqlHelper.Instance.ExecuteScalar(sqlCmd_Get);
                 if (Convert.ToInt32(count) == 0)
                 {
@@ -31,6 +31,48 @@ namespace VPNAndDevicesManager
                 {
                     throw new Exception(vpnInfo.VPNAccount + "，已经在数据库中了");
                 }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static void EditVpnInfo(VPNInfo vpnInfo)
+        {
+            try
+            {
+                string sqlCmd_Get = string.Format("UPDATE [dbo].[VPNInfo] SET [VPNAccount] = '{0}',[VPNPassword] = '{1}',[Seller] = '{2}',[BuyTime] = '{3}',[DieTime] = '{4}',[UpdateTime] = '{5}',[IP] = '{6}',[Country] = '{7}' WHERE [ID] = {8}",
+                    vpnInfo.VPNAccount, vpnInfo.VPNPassword, vpnInfo.Seller, vpnInfo.BuyTime, vpnInfo.DieTime, DateTime.Now, vpnInfo.IP, vpnInfo.Country, vpnInfo.ID);
+
+                SqlHelper.Instance.ExecuteCommand(sqlCmd_Get);
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static void DeleteVPNInfo(string vpnInfoID)
+        {
+            try
+            {
+                string sqlCmd_Get = string.Format("DELETE FROM [dbo].[VPNInfo] WHERE [ID] = {0}",
+                    vpnInfoID);
+
+                SqlHelper.Instance.ExecuteCommand(sqlCmd_Get);
+
+                sqlCmd_Get = string.Format("DELETE FROM [dbo].[IPhoneAndVPN] WHERE [VPNID] = {0}",
+                    vpnInfoID);
+
+                SqlHelper.Instance.ExecuteCommand(sqlCmd_Get);
+
+                sqlCmd_Get = string.Format("DELETE FROM [dbo].[ComputerAndVPN] WHERE [VPNID] = {0}",
+                    vpnInfoID);
+
+                SqlHelper.Instance.ExecuteCommand(sqlCmd_Get);
+
             }
             catch
             {
@@ -98,10 +140,36 @@ namespace VPNAndDevicesManager
 
                 DataTable infoTable = SqlHelper.Instance.ExecuteDataTable(sqlCmd);
 
-                //if (infoTable == null || infoTable.Rows.Count == 0)
-                //{
-                //    throw new Exception("没有可用VPN");
-                //}
+                List<DataRow> dataRowList = new List<DataRow>();
+
+                for (int i = 0; i < infoTable.Rows.Count; i++)
+                {
+                    for (int j = i + 1; j < infoTable.Rows.Count; j++)
+                    {
+                        if (infoTable.Rows[j]["ID"].ToString() == infoTable.Rows[i]["ID"].ToString())
+                        {
+                            if (infoTable.Rows[j]["ComputerModel"].ToString() != infoTable.Rows[i]["ComputerModel"].ToString())
+                            {
+                                infoTable.Rows[i]["ComputerModel"] = infoTable.Rows[i]["ComputerModel"].ToString() + "," + infoTable.Rows[j]["ComputerModel"].ToString();
+                            }
+
+                            if (infoTable.Rows[j]["SerialNumber"].ToString() != infoTable.Rows[i]["SerialNumber"].ToString())
+                            {
+                                infoTable.Rows[i]["SerialNumber"] = infoTable.Rows[i]["SerialNumber"].ToString() + "," + infoTable.Rows[j]["SerialNumber"].ToString();
+                            }
+
+                            if (!dataRowList.Contains(infoTable.Rows[j]))
+                            {
+                                dataRowList.Add(infoTable.Rows[j]);
+                            }
+                        }
+                    }
+                }
+
+                foreach (var item in dataRowList)
+                {
+                    infoTable.Rows.Remove(item);
+                }
 
                 return infoTable;
 

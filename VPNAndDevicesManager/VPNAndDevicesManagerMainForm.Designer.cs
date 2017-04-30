@@ -35,10 +35,14 @@
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxEdit_VPNCountry_Add = new System.Windows.Forms.ComboBox();
+            this.label_VPNInfoID = new System.Windows.Forms.Label();
+            this.simpleButton_DeleteVPN = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton_EditVPN = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_AddVPN = new DevExpress.XtraEditors.SimpleButton();
             this.dateEdit_VPNDieDate_Add = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit_VPNBuyDate_Add = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit_VPNCountry_Add = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit_VPNSeller_Add = new DevExpress.XtraEditors.TextEdit();
             this.textEdit_VPNPassword_Add = new DevExpress.XtraEditors.TextEdit();
             this.textEdit_VPNAddress_Add = new DevExpress.XtraEditors.TextEdit();
@@ -50,6 +54,17 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.dataGridView_VPNInfo = new System.Windows.Forms.DataGridView();
+            this.Column_VPNID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
@@ -112,15 +127,16 @@
             this.navigationPage1.SuspendLayout();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNDieDate_Add.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNDieDate_Add.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNBuyDate_Add.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNBuyDate_Add.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_VPNCountry_Add.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNSeller_Add.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNPassword_Add.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNAddress_Add.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNAccount_Add.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_VPNInfo)).BeginInit();
             this.navigationPage2.SuspendLayout();
             this.tabPane2.SuspendLayout();
             this.tabNavigationPage3.SuspendLayout();
@@ -140,9 +156,9 @@
             // 
             this.panelControl1.Controls.Add(this.textBox_Info);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 668);
+            this.panelControl1.Location = new System.Drawing.Point(0, 925);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1024, 100);
+            this.panelControl1.Size = new System.Drawing.Size(1412, 100);
             this.panelControl1.TabIndex = 0;
             // 
             // textBox_Info
@@ -154,7 +170,7 @@
             this.textBox_Info.Multiline = true;
             this.textBox_Info.Name = "textBox_Info";
             this.textBox_Info.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Info.Size = new System.Drawing.Size(1020, 96);
+            this.textBox_Info.Size = new System.Drawing.Size(1408, 96);
             this.textBox_Info.TabIndex = 111;
             this.textBox_Info.TabStop = false;
             this.textBox_Info.Text = "--";
@@ -165,7 +181,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1024, 668);
+            this.panelControl2.Size = new System.Drawing.Size(1412, 925);
             this.panelControl2.TabIndex = 1;
             // 
             // navigationPane1
@@ -180,10 +196,10 @@
             this.navigationPage1,
             this.navigationPage2,
             this.navigationPage3});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(1020, 664);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1408, 921);
             this.navigationPane1.SelectedPage = this.navigationPage1;
-            this.navigationPane1.SelectedPageIndex = 1;
-            this.navigationPane1.Size = new System.Drawing.Size(1020, 664);
+            this.navigationPane1.SelectedPageIndex = 0;
+            this.navigationPane1.Size = new System.Drawing.Size(1408, 921);
             this.navigationPane1.TabIndex = 0;
             this.navigationPane1.Text = "VPN管理";
             this.navigationPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.navigationPane1_SelectedPageChanged);
@@ -195,7 +211,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "";
             this.navigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
-            this.navigationPage1.Size = new System.Drawing.Size(888, 594);
+            this.navigationPage1.Size = new System.Drawing.Size(1276, 851);
             // 
             // tabPane1
             // 
@@ -207,177 +223,325 @@
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2});
-            this.tabPane1.RegularSize = new System.Drawing.Size(888, 594);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1276, 851);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(888, 594);
+            this.tabPane1.Size = new System.Drawing.Size(1276, 851);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
             // 
             // tabNavigationPage1
             // 
-            this.tabNavigationPage1.Caption = "添加VPN";
-            this.tabNavigationPage1.Controls.Add(this.simpleButton_AddVPN);
-            this.tabNavigationPage1.Controls.Add(this.dateEdit_VPNDieDate_Add);
-            this.tabNavigationPage1.Controls.Add(this.dateEdit_VPNBuyDate_Add);
-            this.tabNavigationPage1.Controls.Add(this.comboBoxEdit_VPNCountry_Add);
-            this.tabNavigationPage1.Controls.Add(this.textEdit_VPNSeller_Add);
-            this.tabNavigationPage1.Controls.Add(this.textEdit_VPNPassword_Add);
-            this.tabNavigationPage1.Controls.Add(this.textEdit_VPNAddress_Add);
-            this.tabNavigationPage1.Controls.Add(this.textEdit_VPNAccount_Add);
-            this.tabNavigationPage1.Controls.Add(this.labelControl1);
-            this.tabNavigationPage1.Controls.Add(this.labelControl2);
-            this.tabNavigationPage1.Controls.Add(this.labelControl6);
-            this.tabNavigationPage1.Controls.Add(this.labelControl14);
-            this.tabNavigationPage1.Controls.Add(this.labelControl3);
-            this.tabNavigationPage1.Controls.Add(this.labelControl5);
-            this.tabNavigationPage1.Controls.Add(this.labelControl4);
+            this.tabNavigationPage1.Caption = "管理VPN";
+            this.tabNavigationPage1.Controls.Add(this.panel1);
+            this.tabNavigationPage1.Controls.Add(this.dataGridView_VPNInfo);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(866, 536);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1254, 793);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBoxEdit_VPNCountry_Add);
+            this.panel1.Controls.Add(this.label_VPNInfoID);
+            this.panel1.Controls.Add(this.simpleButton_DeleteVPN);
+            this.panel1.Controls.Add(this.simpleButton_EditVPN);
+            this.panel1.Controls.Add(this.simpleButton_AddVPN);
+            this.panel1.Controls.Add(this.dateEdit_VPNDieDate_Add);
+            this.panel1.Controls.Add(this.dateEdit_VPNBuyDate_Add);
+            this.panel1.Controls.Add(this.textEdit_VPNSeller_Add);
+            this.panel1.Controls.Add(this.textEdit_VPNPassword_Add);
+            this.panel1.Controls.Add(this.textEdit_VPNAddress_Add);
+            this.panel1.Controls.Add(this.textEdit_VPNAccount_Add);
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Controls.Add(this.labelControl2);
+            this.panel1.Controls.Add(this.labelControl6);
+            this.panel1.Controls.Add(this.labelControl14);
+            this.panel1.Controls.Add(this.labelControl3);
+            this.panel1.Controls.Add(this.labelControl5);
+            this.panel1.Controls.Add(this.labelControl4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 484);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1254, 309);
+            this.panel1.TabIndex = 40;
+            // 
+            // comboBoxEdit_VPNCountry_Add
+            // 
+            this.comboBoxEdit_VPNCountry_Add.FormattingEnabled = true;
+            this.comboBoxEdit_VPNCountry_Add.Items.AddRange(new object[] {
+            "en-US",
+            "zh-CN"});
+            this.comboBoxEdit_VPNCountry_Add.Location = new System.Drawing.Point(964, 25);
+            this.comboBoxEdit_VPNCountry_Add.Name = "comboBoxEdit_VPNCountry_Add";
+            this.comboBoxEdit_VPNCountry_Add.Size = new System.Drawing.Size(247, 26);
+            this.comboBoxEdit_VPNCountry_Add.TabIndex = 46;
+            // 
+            // label_VPNInfoID
+            // 
+            this.label_VPNInfoID.AutoSize = true;
+            this.label_VPNInfoID.Location = new System.Drawing.Point(918, 143);
+            this.label_VPNInfoID.Name = "label_VPNInfoID";
+            this.label_VPNInfoID.Size = new System.Drawing.Size(0, 18);
+            this.label_VPNInfoID.TabIndex = 45;
+            this.label_VPNInfoID.Visible = false;
+            // 
+            // simpleButton_DeleteVPN
+            // 
+            this.simpleButton_DeleteVPN.Location = new System.Drawing.Point(791, 208);
+            this.simpleButton_DeleteVPN.Name = "simpleButton_DeleteVPN";
+            this.simpleButton_DeleteVPN.Size = new System.Drawing.Size(167, 84);
+            this.simpleButton_DeleteVPN.TabIndex = 11;
+            this.simpleButton_DeleteVPN.Text = "删除VPN";
+            this.simpleButton_DeleteVPN.Click += new System.EventHandler(this.simpleButton_DeleteVPN_Click);
+            // 
+            // simpleButton_EditVPN
+            // 
+            this.simpleButton_EditVPN.Location = new System.Drawing.Point(555, 208);
+            this.simpleButton_EditVPN.Name = "simpleButton_EditVPN";
+            this.simpleButton_EditVPN.Size = new System.Drawing.Size(167, 84);
+            this.simpleButton_EditVPN.TabIndex = 10;
+            this.simpleButton_EditVPN.Text = "修改VPN";
+            this.simpleButton_EditVPN.Click += new System.EventHandler(this.simpleButton_EditVPN_Click);
             // 
             // simpleButton_AddVPN
             // 
-            this.simpleButton_AddVPN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton_AddVPN.Location = new System.Drawing.Point(690, 413);
+            this.simpleButton_AddVPN.Location = new System.Drawing.Point(319, 208);
             this.simpleButton_AddVPN.Name = "simpleButton_AddVPN";
             this.simpleButton_AddVPN.Size = new System.Drawing.Size(167, 84);
-            this.simpleButton_AddVPN.TabIndex = 18;
+            this.simpleButton_AddVPN.TabIndex = 9;
             this.simpleButton_AddVPN.Text = "添加VPN";
             this.simpleButton_AddVPN.Click += new System.EventHandler(this.simpleButton_AddVPN_Click);
             // 
             // dateEdit_VPNDieDate_Add
             // 
             this.dateEdit_VPNDieDate_Add.EditValue = null;
-            this.dateEdit_VPNDieDate_Add.Location = new System.Drawing.Point(597, 209);
+            this.dateEdit_VPNDieDate_Add.Location = new System.Drawing.Point(554, 140);
             this.dateEdit_VPNDieDate_Add.Name = "dateEdit_VPNDieDate_Add";
             this.dateEdit_VPNDieDate_Add.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_VPNDieDate_Add.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_VPNDieDate_Add.Size = new System.Drawing.Size(260, 24);
-            this.dateEdit_VPNDieDate_Add.TabIndex = 17;
+            this.dateEdit_VPNDieDate_Add.TabIndex = 8;
             // 
             // dateEdit_VPNBuyDate_Add
             // 
             this.dateEdit_VPNBuyDate_Add.EditValue = null;
-            this.dateEdit_VPNBuyDate_Add.Location = new System.Drawing.Point(79, 212);
+            this.dateEdit_VPNBuyDate_Add.Location = new System.Drawing.Point(109, 140);
             this.dateEdit_VPNBuyDate_Add.Name = "dateEdit_VPNBuyDate_Add";
             this.dateEdit_VPNBuyDate_Add.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_VPNBuyDate_Add.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_VPNBuyDate_Add.Size = new System.Drawing.Size(247, 24);
-            this.dateEdit_VPNBuyDate_Add.TabIndex = 16;
-            // 
-            // comboBoxEdit_VPNCountry_Add
-            // 
-            this.comboBoxEdit_VPNCountry_Add.Location = new System.Drawing.Point(79, 138);
-            this.comboBoxEdit_VPNCountry_Add.Name = "comboBoxEdit_VPNCountry_Add";
-            this.comboBoxEdit_VPNCountry_Add.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit_VPNCountry_Add.Properties.Items.AddRange(new object[] {
-            "zh-CN",
-            "en-US"});
-            this.comboBoxEdit_VPNCountry_Add.Size = new System.Drawing.Size(247, 24);
-            this.comboBoxEdit_VPNCountry_Add.TabIndex = 14;
+            this.dateEdit_VPNBuyDate_Add.TabIndex = 7;
             // 
             // textEdit_VPNSeller_Add
             // 
-            this.textEdit_VPNSeller_Add.Location = new System.Drawing.Point(597, 135);
+            this.textEdit_VPNSeller_Add.Location = new System.Drawing.Point(964, 87);
             this.textEdit_VPNSeller_Add.Name = "textEdit_VPNSeller_Add";
-            this.textEdit_VPNSeller_Add.Size = new System.Drawing.Size(260, 24);
-            this.textEdit_VPNSeller_Add.TabIndex = 15;
+            this.textEdit_VPNSeller_Add.Size = new System.Drawing.Size(247, 24);
+            this.textEdit_VPNSeller_Add.TabIndex = 6;
             // 
             // textEdit_VPNPassword_Add
             // 
-            this.textEdit_VPNPassword_Add.Location = new System.Drawing.Point(597, 20);
+            this.textEdit_VPNPassword_Add.Location = new System.Drawing.Point(554, 30);
             this.textEdit_VPNPassword_Add.Name = "textEdit_VPNPassword_Add";
             this.textEdit_VPNPassword_Add.Size = new System.Drawing.Size(260, 24);
-            this.textEdit_VPNPassword_Add.TabIndex = 12;
+            this.textEdit_VPNPassword_Add.TabIndex = 3;
             // 
             // textEdit_VPNAddress_Add
             // 
-            this.textEdit_VPNAddress_Add.Location = new System.Drawing.Point(77, 74);
+            this.textEdit_VPNAddress_Add.Location = new System.Drawing.Point(109, 87);
             this.textEdit_VPNAddress_Add.Name = "textEdit_VPNAddress_Add";
-            this.textEdit_VPNAddress_Add.Size = new System.Drawing.Size(780, 24);
-            this.textEdit_VPNAddress_Add.TabIndex = 13;
+            this.textEdit_VPNAddress_Add.Size = new System.Drawing.Size(705, 24);
+            this.textEdit_VPNAddress_Add.TabIndex = 5;
             // 
             // textEdit_VPNAccount_Add
             // 
-            this.textEdit_VPNAccount_Add.Location = new System.Drawing.Point(77, 17);
+            this.textEdit_VPNAccount_Add.Location = new System.Drawing.Point(109, 30);
             this.textEdit_VPNAccount_Add.Name = "textEdit_VPNAccount_Add";
             this.textEdit_VPNAccount_Add.Size = new System.Drawing.Size(249, 24);
-            this.textEdit_VPNAccount_Add.TabIndex = 11;
+            this.textEdit_VPNAccount_Add.TabIndex = 2;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 138);
+            this.labelControl1.Location = new System.Drawing.Point(901, 30);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 18);
-            this.labelControl1.TabIndex = 26;
+            this.labelControl1.TabIndex = 41;
             this.labelControl1.Text = "VPN国家";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 77);
+            this.labelControl2.Location = new System.Drawing.Point(44, 90);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(57, 18);
-            this.labelControl2.TabIndex = 26;
+            this.labelControl2.TabIndex = 42;
             this.labelControl2.Text = "VPN地址";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(531, 212);
+            this.labelControl6.Location = new System.Drawing.Point(480, 143);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(60, 18);
-            this.labelControl6.TabIndex = 25;
+            this.labelControl6.TabIndex = 38;
             this.labelControl6.Text = "到期日期";
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(531, 138);
+            this.labelControl14.Location = new System.Drawing.Point(898, 90);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(60, 18);
-            this.labelControl14.TabIndex = 25;
+            this.labelControl14.TabIndex = 39;
             this.labelControl14.Text = "淘宝卖家";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(534, 23);
+            this.labelControl3.Location = new System.Drawing.Point(491, 33);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(57, 18);
-            this.labelControl3.TabIndex = 25;
+            this.labelControl3.TabIndex = 40;
             this.labelControl3.Text = "VPN密码";
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 212);
+            this.labelControl5.Location = new System.Drawing.Point(44, 143);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(60, 18);
-            this.labelControl5.TabIndex = 27;
+            this.labelControl5.TabIndex = 43;
             this.labelControl5.Text = "购买日期";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 20);
+            this.labelControl4.Location = new System.Drawing.Point(44, 33);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(57, 18);
-            this.labelControl4.TabIndex = 27;
+            this.labelControl4.TabIndex = 44;
             this.labelControl4.Text = "VPN账号";
+            // 
+            // dataGridView_VPNInfo
+            // 
+            this.dataGridView_VPNInfo.AllowUserToAddRows = false;
+            this.dataGridView_VPNInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_VPNInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_VPNInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_VPNID,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19});
+            this.dataGridView_VPNInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_VPNInfo.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_VPNInfo.MultiSelect = false;
+            this.dataGridView_VPNInfo.Name = "dataGridView_VPNInfo";
+            this.dataGridView_VPNInfo.ReadOnly = true;
+            this.dataGridView_VPNInfo.RowHeadersVisible = false;
+            this.dataGridView_VPNInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView_VPNInfo.RowTemplate.Height = 27;
+            this.dataGridView_VPNInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_VPNInfo.Size = new System.Drawing.Size(1254, 793);
+            this.dataGridView_VPNInfo.TabIndex = 1;
+            this.dataGridView_VPNInfo.SelectionChanged += new System.EventHandler(this.dataGridView_VPNInfo_SelectionChanged);
+            // 
+            // Column_VPNID
+            // 
+            this.Column_VPNID.DataPropertyName = "ID";
+            this.Column_VPNID.HeaderText = "ID";
+            this.Column_VPNID.Name = "Column_VPNID";
+            this.Column_VPNID.ReadOnly = true;
+            this.Column_VPNID.Visible = false;
+            this.Column_VPNID.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "VPNAccount";
+            this.dataGridViewTextBoxColumn11.HeaderText = "VPN账号";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "VPNPassword";
+            this.dataGridViewTextBoxColumn12.HeaderText = "VPN密码";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "IP";
+            this.dataGridViewTextBoxColumn13.HeaderText = "VPN链接地址";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Country";
+            this.dataGridViewTextBoxColumn14.HeaderText = "VPN国家";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "BuyTime";
+            this.dataGridViewTextBoxColumn15.HeaderText = "购买时间";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 93;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "DieTime";
+            this.dataGridViewTextBoxColumn16.HeaderText = "到期时间";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 93;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "ComputerModel";
+            this.dataGridViewTextBoxColumn17.HeaderText = "使用电脑编号";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 123;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "SerialNumber";
+            this.dataGridViewTextBoxColumn18.HeaderText = "使用手机编号";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 123;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Seller";
+            this.dataGridViewTextBoxColumn19.HeaderText = "卖家旺旺";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 93;
             // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "编辑VPN";
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.PageVisible = false;
-            this.tabNavigationPage2.Size = new System.Drawing.Size(866, 536);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1254, 793);
             // 
             // navigationPage2
             // 
             this.navigationPage2.Caption = "手机信息管理";
             this.navigationPage2.Controls.Add(this.tabPane2);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(888, 594);
+            this.navigationPage2.Size = new System.Drawing.Size(1276, 851);
             // 
             // tabPane2
             // 
@@ -389,10 +553,10 @@
             this.tabPane2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage3,
             this.tabNavigationPage4});
-            this.tabPane2.RegularSize = new System.Drawing.Size(888, 594);
+            this.tabPane2.RegularSize = new System.Drawing.Size(1276, 851);
             this.tabPane2.SelectedPage = this.tabNavigationPage4;
             this.tabPane2.SelectedPageIndex = 0;
-            this.tabPane2.Size = new System.Drawing.Size(888, 594);
+            this.tabPane2.Size = new System.Drawing.Size(1276, 851);
             this.tabPane2.TabIndex = 0;
             this.tabPane2.Text = "tabPane2";
             // 
@@ -415,7 +579,7 @@
             this.tabNavigationPage3.Controls.Add(this.labelControl7);
             this.tabNavigationPage3.Controls.Add(this.labelControl8);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(866, 536);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1254, 793);
             // 
             // button2
             // 
@@ -452,7 +616,7 @@
             this.dataGridView_IPhoneVPNData_Add.RowHeadersVisible = false;
             this.dataGridView_IPhoneVPNData_Add.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_IPhoneVPNData_Add.RowTemplate.Height = 27;
-            this.dataGridView_IPhoneVPNData_Add.Size = new System.Drawing.Size(904, 275);
+            this.dataGridView_IPhoneVPNData_Add.Size = new System.Drawing.Size(1248, 275);
             this.dataGridView_IPhoneVPNData_Add.TabIndex = 38;
             // 
             // Column_IPhoneVPNID
@@ -547,7 +711,7 @@
             // simpleButton_AddIPhoneDeviceInfo_Add
             // 
             this.simpleButton_AddIPhoneDeviceInfo_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton_AddIPhoneDeviceInfo_Add.Location = new System.Drawing.Point(751, 453);
+            this.simpleButton_AddIPhoneDeviceInfo_Add.Location = new System.Drawing.Point(1161, 453);
             this.simpleButton_AddIPhoneDeviceInfo_Add.Name = "simpleButton_AddIPhoneDeviceInfo_Add";
             this.simpleButton_AddIPhoneDeviceInfo_Add.Size = new System.Drawing.Size(156, 69);
             this.simpleButton_AddIPhoneDeviceInfo_Add.TabIndex = 27;
@@ -560,7 +724,7 @@
             this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.AutoSize = true;
             this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.Location = new System.Drawing.Point(688, 129);
+            this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.Location = new System.Drawing.Point(1098, 129);
             this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.Name = "checkBox_IPhoneIsOnlyShowFreeVPN_Add";
             this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.Size = new System.Drawing.Size(222, 22);
             this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.TabIndex = 26;
@@ -650,14 +814,14 @@
             this.tabNavigationPage4.Caption = "编辑手机信息";
             this.tabNavigationPage4.Name = "tabNavigationPage4";
             this.tabNavigationPage4.PageVisible = false;
-            this.tabNavigationPage4.Size = new System.Drawing.Size(866, 536);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1254, 793);
             // 
             // navigationPage3
             // 
             this.navigationPage3.Caption = "电脑信息管理";
             this.navigationPage3.Controls.Add(this.tabPane3);
             this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(888, 594);
+            this.navigationPage3.Size = new System.Drawing.Size(1276, 851);
             // 
             // tabPane3
             // 
@@ -669,10 +833,10 @@
             this.tabPane3.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage5,
             this.tabNavigationPage6});
-            this.tabPane3.RegularSize = new System.Drawing.Size(888, 594);
+            this.tabPane3.RegularSize = new System.Drawing.Size(1276, 851);
             this.tabPane3.SelectedPage = this.tabNavigationPage6;
             this.tabPane3.SelectedPageIndex = 0;
-            this.tabPane3.Size = new System.Drawing.Size(888, 594);
+            this.tabPane3.Size = new System.Drawing.Size(1276, 851);
             this.tabPane3.TabIndex = 0;
             this.tabPane3.Text = "tabPane3";
             // 
@@ -690,12 +854,12 @@
             this.tabNavigationPage5.Controls.Add(this.textEdit_ComputerName_Add);
             this.tabNavigationPage5.Controls.Add(this.labelControl12);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(866, 536);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1254, 793);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(548, 483);
+            this.button1.Location = new System.Drawing.Point(936, 483);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 38;
@@ -728,7 +892,7 @@
             this.dataGridView_ComputerVPNData_Add.RowHeadersVisible = false;
             this.dataGridView_ComputerVPNData_Add.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_ComputerVPNData_Add.RowTemplate.Height = 27;
-            this.dataGridView_ComputerVPNData_Add.Size = new System.Drawing.Size(860, 275);
+            this.dataGridView_ComputerVPNData_Add.Size = new System.Drawing.Size(1248, 275);
             this.dataGridView_ComputerVPNData_Add.TabIndex = 37;
             // 
             // Column_ComputerVPNID
@@ -828,7 +992,7 @@
             // simpleButton_Computer_Add
             // 
             this.simpleButton_Computer_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton_Computer_Add.Location = new System.Drawing.Point(707, 455);
+            this.simpleButton_Computer_Add.Location = new System.Drawing.Point(1095, 455);
             this.simpleButton_Computer_Add.Name = "simpleButton_Computer_Add";
             this.simpleButton_Computer_Add.Size = new System.Drawing.Size(156, 69);
             this.simpleButton_Computer_Add.TabIndex = 36;
@@ -850,7 +1014,7 @@
             this.checkBox_ComputerOnlyShowFreeVPN.AutoSize = true;
             this.checkBox_ComputerOnlyShowFreeVPN.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.checkBox_ComputerOnlyShowFreeVPN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.checkBox_ComputerOnlyShowFreeVPN.Location = new System.Drawing.Point(644, 96);
+            this.checkBox_ComputerOnlyShowFreeVPN.Location = new System.Drawing.Point(1032, 96);
             this.checkBox_ComputerOnlyShowFreeVPN.Name = "checkBox_ComputerOnlyShowFreeVPN";
             this.checkBox_ComputerOnlyShowFreeVPN.Size = new System.Drawing.Size(222, 22);
             this.checkBox_ComputerOnlyShowFreeVPN.TabIndex = 34;
@@ -866,7 +1030,7 @@
             this.listBox_ComputerVPNInfo_Add.ItemHeight = 18;
             this.listBox_ComputerVPNInfo_Add.Location = new System.Drawing.Point(18, 124);
             this.listBox_ComputerVPNInfo_Add.Name = "listBox_ComputerVPNInfo_Add";
-            this.listBox_ComputerVPNInfo_Add.Size = new System.Drawing.Size(845, 256);
+            this.listBox_ComputerVPNInfo_Add.Size = new System.Drawing.Size(1233, 256);
             this.listBox_ComputerVPNInfo_Add.TabIndex = 35;
             this.listBox_ComputerVPNInfo_Add.Visible = false;
             // 
@@ -898,13 +1062,13 @@
             this.tabNavigationPage6.Caption = "编辑电脑信息";
             this.tabNavigationPage6.Name = "tabNavigationPage6";
             this.tabNavigationPage6.PageVisible = false;
-            this.tabNavigationPage6.Size = new System.Drawing.Size(866, 536);
+            this.tabNavigationPage6.Size = new System.Drawing.Size(1254, 793);
             // 
             // VPNAndDevicesManagerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1412, 1025);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.IsMdiContainer = true;
@@ -920,16 +1084,17 @@
             this.navigationPage1.ResumeLayout(false);
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
-            this.tabNavigationPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNDieDate_Add.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNDieDate_Add.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNBuyDate_Add.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_VPNBuyDate_Add.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_VPNCountry_Add.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNSeller_Add.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNPassword_Add.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNAddress_Add.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_VPNAccount_Add.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_VPNInfo)).EndInit();
             this.navigationPage2.ResumeLayout(false);
             this.tabPane2.ResumeLayout(false);
             this.tabNavigationPage3.ResumeLayout(false);
@@ -977,19 +1142,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton_AddIPhoneDeviceInfo_Add;
         private DevExpress.XtraEditors.SimpleButton simpleButton_IPhoneUnSelect_Add;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton_AddVPN;
-        private DevExpress.XtraEditors.DateEdit dateEdit_VPNDieDate_Add;
-        private DevExpress.XtraEditors.DateEdit dateEdit_VPNBuyDate_Add;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit_VPNCountry_Add;
-        private DevExpress.XtraEditors.TextEdit textEdit_VPNPassword_Add;
-        private DevExpress.XtraEditors.TextEdit textEdit_VPNAddress_Add;
-        private DevExpress.XtraEditors.TextEdit textEdit_VPNAccount_Add;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraBars.Navigation.TabPane tabPane3;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
         private DevExpress.XtraEditors.SimpleButton simpleButton_ComputerModifySysComputerName_Add;
@@ -1001,8 +1153,6 @@
         private DevExpress.XtraEditors.TextEdit textEdit_ComputerName_Add;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage6;
-        private DevExpress.XtraEditors.TextEdit textEdit_VPNSeller_Add;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView_ComputerVPNData_Add;
         private System.Windows.Forms.DataGridView dataGridView_IPhoneVPNData_Add;
@@ -1027,6 +1177,36 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridView dataGridView_VPNInfo;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_DeleteVPN;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_EditVPN;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_AddVPN;
+        private DevExpress.XtraEditors.DateEdit dateEdit_VPNDieDate_Add;
+        private DevExpress.XtraEditors.DateEdit dateEdit_VPNBuyDate_Add;
+        private DevExpress.XtraEditors.TextEdit textEdit_VPNSeller_Add;
+        private DevExpress.XtraEditors.TextEdit textEdit_VPNPassword_Add;
+        private DevExpress.XtraEditors.TextEdit textEdit_VPNAddress_Add;
+        private DevExpress.XtraEditors.TextEdit textEdit_VPNAccount_Add;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_VPNID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.Label label_VPNInfoID;
+        private System.Windows.Forms.ComboBox comboBoxEdit_VPNCountry_Add;
 
 
 

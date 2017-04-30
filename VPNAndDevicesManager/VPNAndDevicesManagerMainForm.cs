@@ -17,8 +17,14 @@ namespace VPNAndDevicesManager
         public VPNAndDevicesManagerMainForm()
         {
             InitializeComponent();
-            InitControls();
 
+            this.Load += VPNAndDevicesManagerMainForm_Load;
+
+        }
+
+        void VPNAndDevicesManagerMainForm_Load(object sender, EventArgs e)
+        {
+            InitControls();
         }
 
         private void InitControls()
@@ -35,9 +41,12 @@ namespace VPNAndDevicesManager
 
             this.dataGridView_IPhoneVPNData_Add.AutoGenerateColumns = false;
             this.dataGridView_ComputerVPNData_Add.AutoGenerateColumns = false;
+            this.dataGridView_VPNInfo.AutoGenerateColumns = false;
+
+            navigationPane1_SelectedPageChanged(new object(), null);
         }
 
-        #region VPN添加
+        #region VPN管理
 
         private bool CheckInput_AddVPN()
         {
@@ -79,6 +88,82 @@ namespace VPNAndDevicesManager
             }
         }
 
+
+        private void dataGridView_VPNInfo_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView_VPNInfo.SelectedRows.Count > 0)
+            {
+                this.label_VPNInfoID.Text = dataGridView_VPNInfo.SelectedRows[0].Cells["Column_VPNID"].Value.ToString().Trim();
+                this.textEdit_VPNAccount_Add.Text = dataGridView_VPNInfo.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                this.textEdit_VPNPassword_Add.Text = dataGridView_VPNInfo.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                this.comboBoxEdit_VPNCountry_Add.SelectedValue = dataGridView_VPNInfo.SelectedRows[0].Cells[4].Value.ToString().Trim();
+                this.textEdit_VPNAddress_Add.Text = dataGridView_VPNInfo.SelectedRows[0].Cells[3].Value.ToString().Trim();
+                this.textEdit_VPNSeller_Add.Text = dataGridView_VPNInfo.SelectedRows[0].Cells[9].Value.ToString().Trim();
+                this.dateEdit_VPNBuyDate_Add.DateTime = DateTime.Parse(dataGridView_VPNInfo.SelectedRows[0].Cells[5].Value.ToString().Trim());
+                this.dateEdit_VPNDieDate_Add.DateTime = DateTime.Parse(dataGridView_VPNInfo.SelectedRows[0].Cells[6].Value.ToString().Trim());
+            }
+        }
+
+
+        private void simpleButton_EditVPN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id_t = 0;
+                int.TryParse(this.label_VPNInfoID.Text, out id_t);
+
+                DataHelper.EditVpnInfo(new UtilityLib.Models.VPNInfo
+               {
+                   BuyTime = this.dateEdit_VPNBuyDate_Add.DateTime.ToString(),
+                   DieTime = this.dateEdit_VPNDieDate_Add.DateTime.ToString(),
+                   IP = this.textEdit_VPNAddress_Add.Text.Trim(),
+                   State = "normal",
+                   VPNAccount = this.textEdit_VPNAccount_Add.Text.Trim(),
+                   VPNPassword = this.textEdit_VPNPassword_Add.Text.Trim(),
+                   Country = this.comboBoxEdit_VPNCountry_Add.Text.Trim(),
+                   Seller = this.textEdit_VPNSeller_Add.Text.Trim(),
+                   ID = id_t
+               });
+
+
+                button0_Click(new object(), new EventArgs());
+
+                SetInfo("修改成功");
+
+            }
+            catch (Exception ex)
+            {
+                SetInfo("修改失败," + ex.Message);
+            }
+        }
+
+        private void simpleButton_DeleteVPN_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_VPNInfo.SelectedRows.Count <= 0 || string.IsNullOrWhiteSpace(label_VPNInfoID.Text))
+            {
+                SetInfo("请选择要删除的VPN");
+                return;
+            }
+
+            if (MessageBox.Show("还将删除本VPN的所有关联记录.", "确定删除VPN?", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    DataHelper.DeleteVPNInfo(label_VPNInfoID.Text);
+
+
+                    button0_Click(new object(), new EventArgs());
+
+                    SetInfo("删除成功.");
+                }
+                catch (Exception ex)
+                {
+                    SetInfo("删除失败," + ex.Message);
+                }
+            }
+        }
+
+
         #endregion
 
         #region 添加手机信息
@@ -95,20 +180,22 @@ namespace VPNAndDevicesManager
 
         private void navigationPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
+            if (navigationPane1.SelectedPageIndex == 0)
+            {
+                try
+                {
+                    button0_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    SetInfo(ex.Message);
+                }
+            }
+
             if (navigationPane1.SelectedPageIndex == 1)
             {
                 try
                 {
-                    //this.listBox_IPhoneBindingVPNAccount_Add.Items.Clear();
-                    //simpleButton_IPhoneUnSelect_Add_Click(sender, e);
-
-                    //_vpnInfoList = DataHelper.GetVPNInfo(this.checkBox_IPhoneIsOnlyShowFreeVPN_Add.Checked, "normal");
-
-                    //foreach (var item in _vpnInfoList)
-                    //{
-                    //    this.listBox_IPhoneBindingVPNAccount_Add.Items.Add(item.VPNAccount + "@" + item.IP + "@" + item.Country + "_" + item.ID);
-                    //}
-
                     button2_Click(sender, e);
                 }
                 catch (Exception ex)
@@ -121,15 +208,6 @@ namespace VPNAndDevicesManager
             {
                 try
                 {
-                    //this.listBox_ComputerVPNInfo_Add.Items.Clear();
-                    //simpleButton_ComputerUnSelectVPN_Add_Click(sender, e);
-
-                    //_vpnInfoList = DataHelper.GetVPNInfoForComputer(this.checkBox_ComputerOnlyShowFreeVPN.Checked, "normal");
-
-                    //foreach (var item in _vpnInfoList)
-                    //{
-                    //    this.listBox_ComputerVPNInfo_Add.Items.Add(item.VPNAccount + "@" + item.IP + "@" + item.Country + "_" + item.ID);
-                    //}
 
                     button1_Click(sender, e);
                 }
@@ -330,6 +408,11 @@ namespace VPNAndDevicesManager
             this.dataGridView_IPhoneVPNData_Add.ClearSelection();
         }
 
+        private void button0_Click(object sender, EventArgs e)
+        {
+            this.dataGridView_VPNInfo.DataSource = DataHelper.GetVPNINfoDataTable(false, "normal");
+            this.dataGridView_VPNInfo.ClearSelection();
+        }
 
     }
 }

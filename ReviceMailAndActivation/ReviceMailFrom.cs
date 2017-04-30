@@ -231,8 +231,8 @@ namespace ReviceMailAndActivation
         }
 
 
-        private  void button_Start_Click(object sender, EventArgs e)
-        {            
+        private void button_Start_Click(object sender, EventArgs e)
+        {
             Start();
         }
 
@@ -247,7 +247,7 @@ namespace ReviceMailAndActivation
                 _timer.Start();
 
                 _appleAccountFullInfo = HttpDataHelper.GetAppleAccountFullInfoAndRefreshStateByState("ok", "reviceing");
-                
+
                 //test
                 //_appleAccountFullInfo = new AppleAccountFullInfo();
                 //_appleAccountFullInfo.AppleAccount = "muerkdosstblciqu@outlook.com";
@@ -266,7 +266,7 @@ namespace ReviceMailAndActivation
 
                     await Task.Delay(TimeSpan.FromSeconds(1));
 
-                    _mainUrl = MailHelper.GetVerifyMailUrl(_appleAccountFullInfo.VerifyMail, _appleAccountFullInfo.VerifyPassword,_appleAccountFullInfo.Country);
+                    _mainUrl = MailHelper.GetVerifyMailUrl(_appleAccountFullInfo.VerifyMail, _appleAccountFullInfo.VerifyPassword, _appleAccountFullInfo.Country);
                     if (string.IsNullOrWhiteSpace(_mainUrl))
                     {
                         SetInfo("没有获取到邮件,恢复账号状态...");
@@ -324,7 +324,11 @@ namespace ReviceMailAndActivation
             this.textBox_Info.AppendText(DateTime.Now.ToString() + "," + msg);
             this.textBox_Info.AppendText(Environment.NewLine);
 
-            Logger.Log(msg);
+            try
+            {
+                Logger.Log(msg);
+            }
+            catch { }
         }
 
         private void numericUpDown_Second_ValueChanged(object sender, EventArgs e)
@@ -340,7 +344,7 @@ namespace ReviceMailAndActivation
         private void button1_Click(object sender, EventArgs e)
         {
             //MailHelper.GetVerifyMailUrl("muerkdosstblciqu@outlook.com", "b2y6h7w8v6");
-            MailHelper.GetVerifyMailUrl("rpdchitrwowggem@outlook.com", "p5y5i5a4t5","china");
+            MailHelper.GetVerifyMailUrl("lwmlqbputsesekxmbiymwn1@outlook.com", "q2i8m3h3x1m1");
         }
 
     }
